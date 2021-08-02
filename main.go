@@ -4,12 +4,16 @@ import (
 	"fmt"
 )
 
-func Divide(a, b int) (int, bool) { // function declaration
+func Divide(a, b int) (result int, success bool) { // function declaration
 	// function definition
 	if b == 0 {
-		return 0, false
+		result = 0
+		success = false
+		return
 	}
-	return a / b, true
+	result = a / b
+	success = true
+	return
 }
 
 func main() {
