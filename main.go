@@ -1,18 +1,14 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func printNo(n int) {
-	if n == 0 {
-		return
-	}
-	fmt.Println(n)
-	printNo(n - 1)
-	fmt.Println("After", n)
-}
+const PI = 3.14              // 타입 없는 상수
+const FloatPI float64 = 3.14 // float64 타입 상수
 
 func main() {
-	printNo(3)
+	var a int = PI * 100      // 오류가 발생하지 않음
+	var b int = FloatPI * 100 // 타입 오류 발생
+
+	fmt.Println(a)
+	fmt.Println(b)
 }
