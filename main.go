@@ -1,34 +1,23 @@
 package main
 
-import "fmt"
-
-type ColorType int
-
-const (
-	Red ColorType = iota
-	Blue
-	Green
-	Yellow
+import (
+	"fmt"
 )
 
-func colorToString(color ColorType) string {
-	switch color {
-	case Red:
-		return "Red"
-	case Blue:
-		return "Blue"
-	case Green:
-		return "Green"
-	case Yellow:
-		return "Yellow"
-	default:
-		return "Undefined"
-	}
-}
-func getMyfavoriteColor() ColorType {
-	return Blue
-}
-
 func main() {
-	fmt.Println("favorite color is", colorToString(getMyfavoriteColor()))
+	a := 3
+	switch a {
+	case 1:
+		fmt.Println("a == 1")
+		break
+	case 2:
+		fmt.Println("a == 2")
+	case 3:
+		fmt.Println("a == 3")
+		fallthrough
+	case 4:
+		fmt.Println("a == 4")
+	default:
+		fmt.Println("a > 4")
+	}
 }
