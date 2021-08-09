@@ -1,27 +1,18 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-)
+import "fmt"
 
 func main() {
-	stdin := bufio.NewReader(os.Stdin)
-	for { // 무한 루프
-		fmt.Println("input")
-		var number int
-		_, err := fmt.Scanln(&number) // 한 줄 입력
-		if err != nil {               // 숫자가 아니면
-			fmt.Println("input number")
+	a := 1
+	b := 1
 
-			stdin.ReadString('\n') // 키보드 버퍼 제거
-			continue               // for문 처음으로
-		}
-		fmt.Printf("input number is %d \n", number)
-		if number%2 == 0 { // 짝수 검사
-			break // for문 종료
+OuterFor: // 레이블 정의
+	for ; a <= 9; a++ {
+		for b = 1; b <= 9; b++ {
+			if a*b == 45 {
+				break OuterFor // 	레이블에 가장 먼저 포함된 for문까지 종료
+			}
 		}
 	}
-	fmt.Println("for statement is end")
+	fmt.Printf("%d * %d = %d\n", a, b, a*b)
 }
