@@ -1,5 +1,6 @@
 .idea
 loadflash.go
+slack/slackbot.go
 
 # Created by https://www.toptal.com/developers/gitignore/api/go,jetbrains
 # Edit at https://www.toptal.com/developers/gitignore?templates=go,jetbrains
@@ -132,3 +133,4 @@ fabric.properties
 .idea/codestream.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/go,jetbrains
+.DS_Store
